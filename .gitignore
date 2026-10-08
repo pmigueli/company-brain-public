@@ -1,0 +1,16 @@
+cognee-feedback.md
+.cognee-feedback.state
+.env
+.venv/
+.cognee_system/
+.cognee_data/
+__pycache__/
+.DS_Store
+data/
+out/
+eval/results/
+eval/scenarios.json
+# Only the synthetic sample users are committed; anything else under sample/raw stays local.
+sample/raw/*
+!sample/raw/alice@example.com/
+!sample/raw/bob@example.com/

@@ -1,0 +1,107 @@
+[
+ {
+  "id": "dup-ticket-alice",
+  "as_user": "alice@example.com",
+  "question": "Is ACME-231 a duplicate of another ticket? Which one?",
+  "must_mention": [
+   "ACME-210"
+  ],
+  "expected_sources": [
+   "source:linear"
+  ],
+  "story": "Same bug, two tickets: Eli filed ACME-231 after Dana's ACME-210"
+ },
+ {
+  "id": "dup-ticket-bob",
+  "as_user": "bob@example.com",
+  "question": "Is ACME-231 a duplicate of another ticket? Which one?",
+  "must_mention": [
+   "ACME-210"
+  ],
+  "expected_sources": [
+   "source:linear"
+  ],
+  "story": "Same bug, two tickets: Linear is shared, so Bob's own brain has both"
+ },
+ {
+  "id": "dup-ticket-filer",
+  "as_user": "alice@example.com",
+  "question": "Who filed the original gripper calibration ticket that ACME-231 duplicates?",
+  "must_mention": [
+   "Dana",
+   "ACME-210"
+  ],
+  "expected_sources": [
+   "source:linear"
+  ]
+ },
+ {
+  "id": "rollout-decision",
+  "as_user": "bob@example.com",
+  "question": "What did we decide about how firmware gets rolled out to the fleet, and who approved it?",
+  "must_mention": [
+   "canary",
+   "Alice"
+  ],
+  "expected_sources": [
+   "source:slack",
+   "source:linear"
+  ],
+  "story": "A decision in #eng-fleet, a channel both users are in"
+ },
+ {
+  "id": "stale-runbook",
+  "as_user": "alice@example.com",
+  "question": "Is the Firmware Release Runbook in Notion still current?",
+  "must_mention": [
+   "canary",
+   "ACME-240"
+  ],
+  "expected_sources": [
+   "source:notion",
+   "source:slack",
+   "source:linear"
+  ],
+  "story": "A document that still describes a replaced flow (Friday fleet-wide push)"
+ },
+ {
+  "id": "docks-bob",
+  "as_user": "bob@example.com",
+  "question": "Which charging dock is out of service, and where were its robots moved?",
+  "must_mention": [
+   "dock 3",
+   "dock 5"
+  ],
+  "expected_sources": [
+   "source:granola",
+   "source:slack"
+  ],
+  "story": "Bob's own Granola call and his night-shift channel"
+ },
+ {
+  "id": "site-alice",
+  "as_user": "alice@example.com",
+  "question": "What is the codename of the second warehouse site, and which city is it in?",
+  "must_mention": [
+   "Bluebird",
+   "Tucson"
+  ],
+  "expected_sources": [
+   "source:granola"
+  ],
+  "story": "Access: only in Alice's private Granola call (Alice and Farah, 7 Oct)"
+ },
+ {
+  "id": "site-bob",
+  "as_user": "bob@example.com",
+  "question": "What is the codename of the second warehouse site, and which city is it in?",
+  "must_mention": [],
+  "must_not_mention": [
+   "Bluebird",
+   "Tucson",
+   "7b1e9c2a"
+  ],
+  "expected_sources": [],
+  "story": "Access: Bob cannot read alice-brain, so the private call must not surface (until Alice grants it)"
+ }
+]
